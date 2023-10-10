@@ -129,6 +129,14 @@ The library seems conflicting with ethers lib, so have to use legacy peer deps
 npm install --legacy-peer-deps
 ```
 
+Add this .env file\
+here's an eg.
+
+```shell
+PRIVATE_KEY=0xabc
+MUMBAI_RPC_URL=https://polygon-mumbai.g.alchemy.com/v2/YOUR_API_KEY
+```
+
 To deploy your V1 contract
 
 ```shell
@@ -138,9 +146,9 @@ npx hardhat run scripts/deploy.js --network mumbai
 To upgrade your contract to BoxV2
 
 ```shell
-npx hardhat run scripts/deploy.js --network mumbai
+npx hardhat run scripts/upgrade.js --network mumbai
 ```
 
 Now, you can call increment function from v2 and call the retrieve function to check the value is updated or not, as we have used v2. And if it is, CONGRATULATIONS its upgraded.
 
-There's a check.js file to check the balance.
+There's a check.js file to retrieve the value.
